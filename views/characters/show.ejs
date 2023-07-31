@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<table id="show-page">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Level</th>
+      <th>Class</th>
+      <th>Race</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= character.name %></td>
+      <td><%= character.level %></td>
+      <td><%= character.class %></td>
+      <td><%= character.race %></td>
+      <td><%= character.description %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>

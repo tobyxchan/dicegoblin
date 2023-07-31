@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<h2>Character List</h2>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Level</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% characters.forEach(function(c) { %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= c.level %></td>
+        <td><%= c.class %></td>
+        <td><a href="/characters/<%= c._id %>">View</a></td>
+      </tr>
+      <% }); %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
