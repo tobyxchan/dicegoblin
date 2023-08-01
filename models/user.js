@@ -8,8 +8,10 @@ const userSchema = new Schema({
         required: true
     },
     email: String,
-    avatar: String
-}, {
+    avatar: String,
+    cloudinary_id: {
+        type: String
+    }}, {
     timestamps: true
 });
 

@@ -2,10 +2,10 @@
 
 <h2>Character Creation</h2>
 <form action="/characters" method="POST">
-    <label>Name:
+    <label><strong>Name:</strong>
         <input type="text" name="name">
     </label><br>
-    <label>Class:
+    <br><label><strong>Class:</strong>
         <select id="classSelector" name="class" onchange='on_change(this)'>
             <option value="Default">Select</option>
             <option value="Barbarian">Barbarian</option>
@@ -22,97 +22,50 @@
             <option value="Wizard">Wizard</option>
         </select>
         <div id="barbarianDescription" style="display:none;">
-            <h5>For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.</h5>
+            <p>For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.</p>
         </div>
         <div id="bardDescription" style="display:none;">
-            <h5>Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds. The bard is a master of song, speech, and the magic they contain.</h5>
+            <p>Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds. The bard is a master of song, speech, and the magic they contain.</p>
         </div>
         <div id="clericDescription" style="display:none;">
-            <h5>Clerics are intermediaries between the mortal world and the distant planes of the gods. As varied as the gods they serve, clerics strive to embody the handiwork of their deities. No ordinary priest, a cleric is imbued with divine magic.</h5>
+            <p>Clerics are intermediaries between the mortal world and the distant planes of the gods. As varied as the gods they serve, clerics strive to embody the handiwork of their deities. No ordinary priest, a cleric is imbued with divine magic.</p>
         </div>
         <div id="druidDescription" style="display:none;">
-            <h5>Whether calling on the elemental forces of nature or emulating the creatures of the animal world, druids are an embodiment of nature's resilience, cunning, and fury. They claim no mastery over nature, but see themselves as extensions of nature's indomitable will.</h5>
+            <p>Whether calling on the elemental forces of nature or emulating the creatures of the animal world, druids are an embodiment of nature's resilience, cunning, and fury. They claim no mastery over nature, but see themselves as extensions of nature's indomitable will.</p>
         </div>
         <div id="fighterDescription" style="display:none;">
-            <h5>Fighters share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat. They are well acquainted with death, both meting it out and staring it defiantly in the face.</h5>
+            <p>Fighters share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat. They are well acquainted with death, both meting it out and staring it defiantly in the face.</p>
         </div>
         <div id="monkDescription" style="display:none;">
-            <h5>Monks are united in their ability to magically harness the energy that flows in their bodies. Whether channeled as a striking display of combat prowess or a subtler focus of defensive ability and speed, this energy infuses all that a monk does.</h5>
+            <p>Monks are united in their ability to magically harness the energy that flows in their bodies. Whether channeled as a striking display of combat prowess or a subtler focus of defensive ability and speed, this energy infuses all that a monk does.</p>
         </div>
         <div id="paladinDescription" style="display:none;">
-            <h5>Whether sworn before a god's altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin's oath is a powerful bond.</h5>
+            <p>Whether sworn before a god's altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin's oath is a powerful bond.</p>
         </div>
         <div id="rangerDescription" style="display:none;">
-            <h5>Far from the bustle of cities and towns, past the hedges that shelter the most distant farms from the terrors of the wild, amid the dense-packed trees of trackless forests and across wide and empty plains, rangers keep their unending watch.</h5>
+            <p>Far from the bustle of cities and towns, past the hedges that shelter the most distant farms from the terrors of the wild, amid the dense-packed trees of trackless forests and across wide and empty plains, rangers keep their unending watch.</p>
         </div>
         <div id="rogueDescription" style="display:none;">
-            <h5>Rogues rely on skill, stealth, and their foes' vulnerabilities to get the upper hand in any situation. They have a knack for finding the solution to just about any problem, demonstrating a resourcefulness and versatility that is the cornerstone of any successful adventuring party.</h5>
+            <p>Rogues rely on skill, stealth, and their foes' vulnerabilities to get the upper hand in any situation. They have a knack for finding the solution to just about any problem, demonstrating a resourcefulness and versatility that is the cornerstone of any successful adventuring party.</p>
         </div>
         <div id="sorcererDescription" style="display:none;">
-            <h5>Sorcerers carry a magical birthright conferred upon them by an exotic bloodline, some otherworldly influence, or exposure to unknown cosmic forces. No one chooses sorcery; the power chooses the sorcerer.</h5>
+            <p>Sorcerers carry a magical birthright conferred upon them by an exotic bloodline, some otherworldly influence, or exposure to unknown cosmic forces. No one chooses sorcery; the power chooses the sorcerer.</p>
         </div>
         <div id="warlockDescription" style="display:none;">
-            <h5>Warlocks are seekers of the knowledge that lies hidden in the fabric of the multiverse. Through pacts made with mysterious beings of supernatural power, warlocks unlock magical effects both subtle and spectacular.</h5>
+            <p>Warlocks are seekers of the knowledge that lies hidden in the fabric of the multiverse. Through pacts made with mysterious beings of supernatural power, warlocks unlock magical effects both subtle and spectacular.</p>
         </div>
         <div id="wizardDescription" style="display:none;">
-            <h5>Wizards are supreme magic-users, defined and united as a class by the spells they cast. Drawing on the subtle weave of magic that permeates the cosmos, wizards cast spells of explosive fire, arcing lightning, subtle deception, brute-force mind control, and much more.</h5>
+            <p>Wizards are supreme magic-users, defined and united as a class by the spells they cast. Drawing on the subtle weave of magic that permeates the cosmos, wizards cast spells of explosive fire, arcing lightning, subtle deception, brute-force mind control, and much more.</p>
         </div>
         <script>
             function on_change(el){
-                if(el.options[el.selectedIndex].value === 'Barbarian'){
-                    document.getElementById('barbarianDescription').style.display = 'block';
-                } else {
-                    document.getElementById('barbarianDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Bard'){
-                    document.getElementById('bardDescription').style.display = 'block';
-                } else {
-                    document.getElementById('bardDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Cleric'){
-                    document.getElementById('clericDescription').style.display = 'block';
-                } else {
-                    document.getElementById('clericDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Druid'){
-                    document.getElementById('druidDescription').style.display = 'block';
-                } else {
-                    document.getElementById('druidDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Fighter'){
-                    document.getElementById('fighterDescription').style.display = 'block';
-                } else {
-                    document.getElementById('fighterDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Monk'){
-                    document.getElementById('monkDescription').style.display = 'block';
-                } else {
-                    document.getElementById('monkDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Paladin'){
-                    document.getElementById('paladinDescription').style.display = 'block';
-                } else {
-                    document.getElementById('paladinDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Ranger'){
-                    document.getElementById('rangerDescription').style.display = 'block';
-                } else {
-                    document.getElementById('rangerDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Rogue'){
-                    document.getElementById('rogueDescription').style.display = 'block';
-                } else {
-                    document.getElementById('rogueDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Sorcerer'){
-                    document.getElementById('sorcererDescription').style.display = 'block';
-                } else {
-                    document.getElementById('sorcererDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Warlock'){
-                    document.getElementById('warlockDescription').style.display = 'block';
-                } else {
-                    document.getElementById('warlockDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Wizard'){
-                    document.getElementById('wizardDescription').style.display = 'block';
-                } else {
-                    document.getElementById('wizardDescription').style.display = 'none';
-                }
+                document.querySelectorAll('[id$=Description]').forEach(d => d.style.display = 'none');
+                document.getElementById(el.options[el.selectedIndex].value.toLowerCase() + 'Description').style.display = 'block';
             };
         </script>
     </label><br>
-    <label>Race:
-        <select name="race" onchange='on_change(this)'>
+    <label><strong>Race:</strong>
+        <select name="race" onchange='on_change2(this)'>
             <option>Select</option>
             <option value="Dragonborn">Dragonborn</option>
             <option value="Dwarf">Dwarf</option>
@@ -124,81 +77,68 @@
             <option value="Human">Human</option>
             <option value="Tiefling">Tiefling</option>
         </select>
-        <!-- <div id="dragonbornDescription" style="display:none;">
-            <h5>Dragonborn look very much like dragons standing erect in humanoid form, though they lack wings or a tail.</h5>
+    </label><br>
+        <div id="dragonbornDescriptionRace" style="display:none;">
+            <p>Dragonborn look very much like dragons standing erect in humanoid form, though they lack wings or a tail.</p>
         </div>
-        <div id="dwarfDescription" style="display:none;">
-            <h5>Bold and hardy, dwarves are known as skilled warriors, miners and workers of stone and metal.</h5>
+        <div id="dwarfDescriptionRace" style="display:none;">
+            <p>Bold and hardy, dwarves are known as skilled warriors, miners and workers of stone and metal.</p>
         </div>
-        <div id="elfDescription" style="display:none;">
-            <h5>Elves are a magical people of otherworldly grace, living in the world but not entirely part of it.</h5>
+        <div id="elfDescriptionRace" style="display:none;">
+            <p>Elves are a magical people of otherworldly grace, living in the world but not entirely part of it.</p>
         </div>
-        <div id="gnomeDescription" style="display:none;">
-            <h5>A gnome's energy and enthusiasm for living shines through every inch of his or her tiny body.</h5>
+        <div id="gnomeDescriptionRace" style="display:none;">
+            <p>A gnome's energy and enthusiasm for living shines through every inch of his or her tiny body.</p>
         </div>
-        <div id="half-elfDescription" style="display:none;">
-            <h5>Half-elves combine what some say are the best qualities of their elf and human parents.</h5>
+        <div id="half-elfDescriptionRace" style="display:none;">
+            <p>Half-elves combine what some say are the best qualities of their elf and human parents.</p>
         </div>
-        <div id="halflingDescription" style="display:none;">
-            <h5>The diminutive halflings survive in a world full of larger creatures by avoiding notice or, barring that, avoiding offense.</h5>
+        <div id="halflingDescriptionRace" style="display:none;">
+            <p>The diminutive halflings survive in a world full of larger creatures by avoiding notice or, barring that, avoiding offense.</p>
         </div>
-        <div id="half-orcDescription" style="display:none;">
-            <h5>Some half-orcs rise to become proud leaders of orc communities. Some venture into the world to prove their worth. Many of these become adventurers, achieving greatness for their mighty deeds.</h5>
+        <div id="half-orcDescriptionRace" style="display:none;">
+            <p>Some half-orcs rise to become proud leaders of orc communities. Some venture into the world to prove their worth. Many of these become adventurers, achieving greatness for their mighty deeds.</p>
         </div>
-        <div id="humanDescription" style="display:none;">
-            <h5>Humans are th most adaptable and ambitious people among the common races. Whatever drives them, human are the innovators, the achievers and the pioneers of the worlds.</h5>
+        <div id="humanDescriptionRace" style="display:none;">
+            <p>Humans are th most adaptable and ambitious people among the common races. Whatever drives them, human are the innovators, the achievers and the pioneers of the worlds.</p>
         </div>
-        <div id="tieflingDescription" style="display:none;">
-            <h5>To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling.</h5>
+        <div id="tieflingDescriptionRace" style="display:none;">
+            <p>To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling.</p>
         </div>
         <script>
-            function on_change(el){
-                if(el.options[el.selectedIndex].value === 'Dragonborn'){
-                    document.getElementById('dragonbornDescription').style.display = 'block';
-                } else {
-                    document.getElementById('dragonbornDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Dwarf'){
-                    document.getElementById('dwarfDescription').style.display = 'block';
-                } else {
-                    document.getElementById('dwarfDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Elf'){
-                    document.getElementById('elfDescription').style.display = 'block';
-                } else {
-                    document.getElementById('elfDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Gnome'){
-                    document.getElementById('gnomeDescription').style.display = 'block';
-                } else {
-                    document.getElementById('gnomeDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Half-Elf'){
-                    document.getElementById('half-elfDescription').style.display = 'block';
-                } else {
-                    document.getElementById('half-elfDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'halfling'){
-                    document.getElementById('halflingDescription').style.display = 'block';
-                } else {
-                    document.getElementById('halflingDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Half-Orc'){
-                    document.getElementById('half-orcDescription').style.display = 'block';
-                } else {
-                    document.getElementById('half-orcDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Human'){
-                    document.getElementById('humanDescription').style.display = 'block';
-                } else {
-                    document.getElementById('humanDescription').style.display = 'none';
-                } if (el.options[el.selectedIndex].value === 'Tiefling'){
-                    document.getElementById('tieflingDescription').style.display = 'block';
-                } else {
-                    document.getElementById('tieflingDescription').style.display = 'none';
-                }
+            function on_change2(el){
+                document.querySelectorAll('[id$=DescriptionRace]').forEach(d => d.style.display = 'none');
+                document.getElementById(el.options[el.selectedIndex].value.toLowerCase() + 'DescriptionRace').style.display = 'block';
             };
-        </script> -->
+        </script>
+    <br><label><strong>Ability Scores:</strong></label>
+    <script>
+        function random(id) {
+            // Rolls a random number between 8 and 16
+            var randomNumber = Math.floor(Math.random() * 8) + 8;
+            document.getElementById(id).value = randomNumber;
+        };
+    </script>
+    <br><label>STR:
+        <input id="strength" type="number" name="stats.strength"></input><button type="button" onclick="random('strength')">Roll</button>
+    </label>
+    <br><label>DEX:
+        <input id="dexterity" type="number" name="stats.dexterity"></input><button type="button" onclick="random('dexterity')">Roll</button>
+    </label>
+    <br><label>CON:
+        <input id="constitution" type="number" name="stats.constitution"></input><button type="button" onclick="random('constitution')">Roll</button>
+    </label>
+    <br><label>INT:
+        <input id="intelligence" type="number" name="stats.intelligence"></input><button type="button" onclick="random('intelligence')">Roll</button>
+    </label>
+    <br><label>WIS:
+        <input id="wisdom" type="number" name="stats.wisdom"></input><button type="button" onclick="random('wisdom')">Roll</button>
+    </label>
+    <br><label>CHA:
+        <input id="charisma" type="number" name="stats.charisma"></input><button type="button" onclick="random('charisma')">Roll</button>
     </label><br>
-    <label>Description:
-        <input type="text" name="description">
-    </label><br>
-    <button type="submit">Add Character</button>
+    <br><button type="submit">Add Character</button>
 </form>
 <p><%= errorMsg %></p>
 
 <%- include('../partials/footer') %>
-
