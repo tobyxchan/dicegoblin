@@ -1,12 +1,28 @@
 <%- include('./partials/header') %>
 
-<h2>Dice Goblin</h2>
+<div class="text-center">
+    <h2>Dice Goblin</h2>
+</div>
 
-<form action="/users" enctype="multipart/form-data" method="POST">
+<div class="container text-center" id="p-text">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-8">
+        Character creation can take forever. The Dice Goblin free character builder makes it quick and easy. 
+        Create a D&D character in minutes and jump into the action with your digital character sheet.
+        Roll stats, edit your backstory, choose an alignment and more!
+        <br><br>Simply log in to get started!
+      </div>
+      <div class="col"></div>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>
+
+<!-- UPLOAD IMAGE FORM PLACEHOLDER -->
+<!-- <form action="/users" enctype="multipart/form-data" method="POST">
     <div>
         <input type="file" name="image">
         <button type="submit">Submit</button>
     </div>
-</form>
-
-<%- include('./partials/footer') %>
+</form> -->

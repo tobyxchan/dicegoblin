@@ -7,6 +7,6 @@ const descriptions = require('../controllers/descriptions');
 // POST /characters/:id/descriptions
 router.post('/characters/:id/descriptions', ensureLoggedIn, descriptionsController.create);
 // DELETE /descriptions/:id
-router.delete('/reviews/:id', ensureLoggedIn, descriptionsController.delete);
+router.delete('/descriptions/:id', ensureLoggedIn, descriptionsController.delete);
 
 module.exports = router;

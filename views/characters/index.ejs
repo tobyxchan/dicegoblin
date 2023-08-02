@@ -1,23 +1,37 @@
 <%- include('../partials/header') %>
 
-<h2>Character List</h2>
-<table id="list">
-  <thead>
+<div class="text-center">
+  <h2>Character List</h2>
+</div>
+
+<div class="container text-center" id="p-text">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-9">
+      Records of heroes past and present. Below is the list of all characters created using Dice Goblin.
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<table class="table table-bordered table-secondary table-striped">
+  <thead class="table-dark">
     <tr>
-      <th>Name</th>
-      <th>Level</th>
-      <th>Class</th>
+      <th scope="col">NAME</th>
+      <th scope="col">LEVEL</th>
+      <th scope="col">CLASS</th>
+      <th scope="col">DETAILS</th>
     </tr>
   </thead>
   <tbody>
     <% characters.forEach(function(c) { %>
       <tr>
-        <td><%= c.name %></td>
+        <th scope="row"><%= c.name %></th>
         <td><%= c.level %></td>
         <td><%= c.class %></td>
         <td><a href="/characters/<%= c._id %>">View</a></td>
       </tr>
-      <% }); %>
+    <% });%>
   </tbody>
 </table>
 

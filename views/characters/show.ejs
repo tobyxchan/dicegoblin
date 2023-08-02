@@ -1,43 +1,120 @@
 <%- include('../partials/header') %>
 
-<h2>Character Sheet</h2>
+<div class="text-center">
+  <h2>CHARACTER SHEET</h2>
+</div>
 
-<br><table id="show-page">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Level</th>
-      <th>Class</th>
-      <th>Race</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= character.name %></td>
-      <td><%= character.level %></td>
-      <td><%= character.class %></td>
-      <td><%= character.race %></td>
-    </tr>
-  </tbody>
-</table>
+<!-- DETAILS AND STATS -->
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm">
+      <table class="table" id="specs">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Level</th>
+            <th>Class</th>
+            <th>Race</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= character.name %></td>
+            <td><%= character.level %></td>
+            <td><%= character.class %></td>
+            <td><%= character.race %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <table class="table table-secondary table-bodered" id="specs">
+        <tr>
+          <th>STR</th>
+          <th>DEX</th>
+          <th>CON</th>
+          <th>INT</th>
+          <th>WIS</th>
+          <th>CHA</th>
+        </tr>
+        <tr>
+          <td><%= character.stats.strength %></td>
+          <td><%= character.stats.dexterity %></td>
+          <td><%= character.stats.constitution %></td>
+          <td><%= character.stats.intelligence %></td>
+          <td><%= character.stats.wisdom %></td>
+          <td><%= character.stats.charisma %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
 
-<table class="table">
-  <tr>
-    <th>Strength</th>
-    <th>Dexterity</th>
-    <th>Constitution</th>
-    <th>Intelligence</th>
-    <th>Wisdom</th>
-    <th>Charisma</th>
-  </tr>
-  <tr>
-    <td><%= character.stats.strength %></td>
-    <td><%= character.stats.dexterity %></td>
-    <td><%= character.stats.constitution %></td>
-    <td><%= character.stats.intelligence %></td>
-    <td><%= character.stats.wisdom %></td>
-    <td><%= character.stats.charisma %></td>
-  </tr>
-</table>
+<!-- DESCRIPTION SECTION -->
+<% if (character.descriptions) { %>
+<div class="row">
+  <div class="col-sm-10">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Creator</th>
+          <th scope="col">Backstory</th>
+          <th scope="col">Age</th>
+          <th scope="col">Alignment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let total = 0 %>
+        <% character.descriptions.forEach(function(d) { %>
+        <tr>
+          <th scope="row" class="descriptions-user"><img alt="avatar" src="<%= d.userAvatar %>" referrerpolicy="no-referrer"><%= d.userName %></th>
+          <td><%= d.backstory %></td>
+          <td><%= d.age %></td>
+          <td><%= d.alignment %></td>
+          <td>
+            <% if (user?._id.equals(d.user)) { %>
+              <form action="/descriptions/<%= d._id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-danger" id="delete-button">X</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+</div>
+</div>
+<% } else { %>
+  <p>No description currently exists for this character.</p>
+<% } %>
+
+<!-- CREATE DESCRIPTION SECTION -->
+<% if (user) { %>
+  <div class="text-center">
+    <h5>Create/Edit Description:</h5>
+  </div>
+  <form id="add-description-form" method="POST" action="/characters/<%= character._id %>/descriptions">
+    <label>Backstory:</label>
+    <textarea name="backstory"></textarea>
+    <label>Age:</label>
+    <input type="number" name="age">
+    <label>Alignment:</label>
+    <select name="alignment">
+      <option selected>Select</option>
+      <option value="Lawful Good">Lawful Good</option>
+      <option value="Lawful Neutral">Lawful Neutral</option>
+      <option value="Lawful Evil">Lawful Evil</option>
+      <option value="Neutral Good">Neutral Good</option>
+      <option value="True Neutral">True Neutral</option>
+      <option value="Neutral Evil">Neutral Evil</option>
+      <option value="Chaotic Good">Chaotic Good</option>
+      <option value="Chaotic Neutral">Chaotic Neutral</option>
+      <option value="Chaotic Evil">Chaotic Evil</option>
+    </select>
+    <input type="submit" value="Confirm">
+  </form>
+<% } %>
 
 <%- include('../partials/footer') %>

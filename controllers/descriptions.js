@@ -20,8 +20,8 @@ async function create(req, res) {
 };
 
 async function deleteDescription(req, res) {
-    const character = await Character.findOne({ 'description._id': req.params.id, 'descriptions.user': req.user._id });
-    if (!character) return res.redirect('/characters');
+    const character = await Character.findOne({ 'descriptions._id': req.params.id, 'descriptions.user': req.user._id });
+    if (!character) return res.redirect(`/characters/${character._id}`);
     character.descriptions.remove(req.params.id);
     await character.save();
     res.redirect(`/characters/${character._id}`);

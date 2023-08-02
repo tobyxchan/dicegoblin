@@ -1,8 +1,28 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.text-center {
+    margin-top: 3vmin;
+    margin-bottom: 3vmin;
 }
 
-a {
-  color: #00B7FF;
+.col-sm-10 {
+    text-align: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 8vmin;
+}
+
+#delete-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#p-text {
+    margin-bottom: 4vmin;
+    margin-top: 3vmin;
+}
+
+#specs {
+    margin-top: 3vmin;
+    margin-bottom: 3vmin;
 }

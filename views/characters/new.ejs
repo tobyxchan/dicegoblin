@@ -1,11 +1,14 @@
 <%- include('../partials/header') %>
 
-<h2>Character Creation</h2>
-<form action="/characters" method="POST">
+<div class="text-center">
+    <h2>Character Creation</h2>
+</div>
+  
+<form id="create-character-form" action="/characters" method="POST">
     <label><strong>Name:</strong>
         <input type="text" name="name">
-    </label><br>
-    <br><label><strong>Class:</strong>
+    </label>
+    <label><strong>Class:</strong>
         <select id="classSelector" name="class" onchange='on_change(this)'>
             <option value="Default">Select</option>
             <option value="Barbarian">Barbarian</option>
@@ -63,7 +66,7 @@
                 document.getElementById(el.options[el.selectedIndex].value.toLowerCase() + 'Description').style.display = 'block';
             };
         </script>
-    </label><br>
+    </label>
     <label><strong>Race:</strong>
         <select name="race" onchange='on_change2(this)'>
             <option>Select</option>
@@ -77,7 +80,7 @@
             <option value="Human">Human</option>
             <option value="Tiefling">Tiefling</option>
         </select>
-    </label><br>
+    </label>
         <div id="dragonbornDescriptionRace" style="display:none;">
             <p>Dragonborn look very much like dragons standing erect in humanoid form, though they lack wings or a tail.</p>
         </div>
@@ -111,7 +114,7 @@
                 document.getElementById(el.options[el.selectedIndex].value.toLowerCase() + 'DescriptionRace').style.display = 'block';
             };
         </script>
-    <br><label><strong>Ability Scores:</strong></label>
+    <label><strong>Ability Scores:</strong></label>
     <script>
         function random(id) {
             // Rolls a random number between 8 and 16
@@ -119,25 +122,27 @@
             document.getElementById(id).value = randomNumber;
         };
     </script>
-    <br><label>STR:
-        <input id="strength" type="number" name="stats.strength"></input><button type="button" onclick="random('strength')">Roll</button>
-    </label>
-    <br><label>DEX:
-        <input id="dexterity" type="number" name="stats.dexterity"></input><button type="button" onclick="random('dexterity')">Roll</button>
-    </label>
-    <br><label>CON:
-        <input id="constitution" type="number" name="stats.constitution"></input><button type="button" onclick="random('constitution')">Roll</button>
-    </label>
-    <br><label>INT:
-        <input id="intelligence" type="number" name="stats.intelligence"></input><button type="button" onclick="random('intelligence')">Roll</button>
-    </label>
-    <br><label>WIS:
-        <input id="wisdom" type="number" name="stats.wisdom"></input><button type="button" onclick="random('wisdom')">Roll</button>
-    </label>
-    <br><label>CHA:
-        <input id="charisma" type="number" name="stats.charisma"></input><button type="button" onclick="random('charisma')">Roll</button>
-    </label><br>
-    <br><button type="submit">Add Character</button>
+    <div id="stats">
+        <label>STR:
+            <input id="strength" type="number" name="stats.strength"></input><button type="button" onclick="random('strength')">Roll</button>
+        </label>
+        <label>DEX:
+            <input id="dexterity" type="number" name="stats.dexterity"></input><button type="button" onclick="random('dexterity')">Roll</button>
+        </label>
+        <label>CON:
+            <input id="constitution" type="number" name="stats.constitution"></input><button type="button" onclick="random('constitution')">Roll</button>
+        </label>
+        <label>INT:
+            <input id="intelligence" type="number" name="stats.intelligence"></input><button type="button" onclick="random('intelligence')">Roll</button>
+        </label>
+        <label>WIS:
+            <input id="wisdom" type="number" name="stats.wisdom"></input><button type="button" onclick="random('wisdom')">Roll</button>
+        </label>
+        <label>CHA:
+            <input id="charisma" type="number" name="stats.charisma"></input><button type="button" onclick="random('charisma')">Roll</button>
+        </label><br>
+    </div>
+    <button type="submit">Add Character</button>
 </form>
 <p><%= errorMsg %></p>
 
