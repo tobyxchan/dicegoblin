@@ -1,5 +1,4 @@
 const Character = require('../models/character');
-// const classDetails = {dropDown, myWrappers, selectionDetails };
 
 module.exports = {
     index,

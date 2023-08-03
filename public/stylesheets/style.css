@@ -15,6 +15,15 @@
     margin: 0 auto;
     margin-bottom: 8vmin;
 }
+
+.profiles {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+}
+
 #desc-table {
     margin-top: 3vmin;
 }
@@ -53,4 +62,9 @@
 #creation {
     margin-left: 10vmin;
     margin-right: 10vmin;
+}
+
+#create-character-form {
+    padding-left: 30%;
+    padding-right: 30%;
 }

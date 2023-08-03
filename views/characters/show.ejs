@@ -4,8 +4,34 @@
   <h2>CHARACTER SHEET</h2>
 </div>
 
-<div class="text-center">
-  <p>icon here</p>
+<div class="profiles">
+  <% if (character.race === 'Dragonborn' ) { %>
+    <img src="https://i.imgur.com/5UQG4lD.png" alt="dragonborn-pic">
+  <% } %>
+  <% if (character.race === 'Dwarf' ) { %>
+    <img src="https://baldursgate3.wiki.fextralife.com/file/Baldurs-Gate-3/dwarf-portrait-bg3-wiki-guide.png" alt="dwarf-pic">
+  <% } %>
+  <% if (character.race === 'Half-Elf' ) { %>
+    <img src="https://i.imgur.com/GFknLJN.png" alt="half-elf-pic">
+  <% } %>
+  <% if (character.race === 'Gnome' ) { %>
+    <img src="https://i.imgur.com/qGxo4j4.jpeg" alt="gnome-pic">
+  <% } %>
+  <% if (character.race === 'Elf' ) { %>
+    <img src="https://i.imgur.com/dyqCgSJ.png" alt="elf-pic">
+  <% } %>
+  <% if (character.race === 'Halfling' ) { %>
+    <img src="https://baldursgate3.wiki.fextralife.com/file/Baldurs-Gate-3/halfling-portrait-bg3-wiki-guide.png" alt="halfling-pic">
+  <% } %>
+  <% if (character.race === 'Half-Orc' ) { %>
+    <img src="https://i.imgur.com/a1szPUs.png" alt="half-orc-pic">
+  <% } %>
+  <% if (character.race === 'Tiefling' ) { %>
+    <img src="https://i.imgur.com/OaCfYjy.png" alt="tiefling-pic">
+  <% } %>
+  <% if (character.race === 'Human' ) { %>
+    <img src="https://i.imgur.com/e4affRD.png" alt="human-pic">
+  <% } %>
 </div>
 
 <!-- DETAILS AND STATS -->
