@@ -14,25 +14,37 @@
   </div>
 </div>
 
-<table class="table table-bordered table-secondary table-striped">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">NAME</th>
-      <th scope="col">LEVEL</th>
-      <th scope="col">CLASS</th>
-      <th scope="col">DETAILS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% characters.forEach(function(c) { %>
-      <tr>
-        <th scope="row"><%= c.name %></th>
-        <td><%= c.level %></td>
-        <td><%= c.class %></td>
-        <td><a href="/characters/<%= c._id %>">View</a></td>
-      </tr>
-    <% });%>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col"></div>
+  <div class="col-8">
+    <table class="table table-bordered table-secondary table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">NAME</th>
+          <th scope="col">LEVEL</th>
+          <th scope="col">CLASS</th>
+          <th scope="col">DETAILS</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% characters.forEach(function(c) { %>
+          <tr>
+            <td scope="row"><%= c.name %></td>
+            <td><%= c.level %></td>
+            <td><%= c.class %></td>
+            <td><a href="/characters/<%= c._id %>">View</a></td>
+            <td>
+              <form action="/characters/<%= c._id %>?_method=DELETE" method="POST" id="character-delete-btn">
+                <button class="btn btn-danger" id="delete-button" type="submit">X</button>
+              </form>
+            </td>
+          </tr>
+        <% });%>
+      </tbody>
+    </table>
+  </div>
+  <div class="col"></div>
+</div>
 
 <%- include('../partials/footer') %>

@@ -10,13 +10,24 @@ async function create(req, res) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-    character.descriptions.push(req.body);
-    try {
-        await character.save();
-    } catch (err) {
-        console.log(err);
+    if (character.descriptions.length < 1) {
+        character.descriptions.push(req.body)
+            try {
+                await character.save()
+            } catch (err) {
+                console.log(err)
+            }
+        res.redirect(`/characters/${character._id}`)
+    } else {
+        character.descriptions.shift();
+        character.descriptions.push(req.body)
+            try {
+                await character.save()
+            } catch (err) {
+                console.log(err)
+            }
+        res.redirect(`/characters/${character._id}`)
     }
-    res.redirect(`/characters/${character._id}`);
 };
 
 async function deleteDescription(req, res) {

@@ -1,6 +1,11 @@
 .text-center {
     margin-top: 3vmin;
-    margin-bottom: 3vmin;
+    margin-bottom: 2vmin;
+}
+
+.create-text {
+    margin-top: 10vmin;
+    margin-bottom: -2vmin;
 }
 
 .col-sm-10 {
@@ -10,11 +15,29 @@
     margin: 0 auto;
     margin-bottom: 8vmin;
 }
+#desc-table {
+    margin-top: 3vmin;
+}
 
-#delete-button {
+#edit-button {
+    text-decoration: none;
+    color: white;
+}
+
+#roll-btn {
+    display: inline;
+}
+
+#dead-space {
+    margin-bottom: 20vmin;
+}
+
+#character-delete-btn {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 50%;
+    padding-right: 50%;
 }
 
 #p-text {
@@ -25,4 +48,9 @@
 #specs {
     margin-top: 3vmin;
     margin-bottom: 3vmin;
+}
+
+#creation {
+    margin-left: 10vmin;
+    margin-right: 10vmin;
 }

@@ -5,21 +5,30 @@ module.exports = {
     index,
     show,
     new: newCharacter,
-    create
+    create,
+    delete: deleteCharacter,
+    edit,
+    update
 };
 
-async function index(req, res) {
-    const characters = await Character.find({});
-    res.render('characters/index', { title: 'Character List', characters });
+async function update(req, res) {
+    const character = await Character.findByIdAndUpdate(req.params.id, req.body);
+    console.log(character);
+    res.redirect(`/characters/${character._id}`);
 };
 
-async function show(req, res) {
+async function edit(req, res) {
     const character = await Character.findById(req.params.id);
-    res.render('characters/show', { title: 'Character Sheet', character });
+    res.render('characters/edit', {
+        title: 'Edit Character',
+        character
+    });
 };
 
-function newCharacter (req, res) {
-    res.render('characters/new', { title: 'Create Character', errorMsg: '' });
+async function deleteCharacter(req, res) {
+    const character = await Character.findById(req.params.id);
+    character.deleteOne();
+    res.redirect('/characters');
 };
 
 async function create(req, res) {
@@ -32,4 +41,18 @@ async function create(req, res) {
         console.log(err);
         res.render('/character/new', {errorMsg: err.message});
     }
+};
+
+function newCharacter (req, res) {
+    res.render('characters/new', { title: 'Create Character', errorMsg: '' });
+};
+
+async function show(req, res) {
+    const character = await Character.findById(req.params.id);
+    res.render('characters/show', { title: 'Character Sheet', character });
+};
+
+async function index(req, res) {
+    const characters = await Character.find({});
+    res.render('characters/index', { title: 'Character List', characters });
 };
