@@ -33,11 +33,12 @@ Stats can be rolled randomly between a range or simply typed in upon creation.
 
 <a name="running-the-program"></a>
 ## Running the Program
-To run the application, simply open it in a new tab by <a href="localhost:3000" target="_blank">clicking here</a>.</p>
+To run the application, simply browse to "localhost:3000" after running the 'nodemon' command.
 
 <a name="future-improvements"></a>
 ## Future Improvements
 - Allow users to upload custom icons through Cloudinary
+- Deploy through Heroku
 - Calculate ability modifiers based on ability scores and display
 - Only allow user which created the character to edit or delete
 - Improve CSS / rewrite
