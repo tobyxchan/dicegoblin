@@ -33,7 +33,7 @@ Stats can be rolled randomly between a range or simply typed in upon creation.
 
 <a name="running-the-program"></a>
 ## Running the Program
-To run the application, simply open it in a new tab by <a href="https://tobyxchan.github.io/dicegoblin/" target="_blank">clicking here</a>.</p>
+To run the application, simply open it in a new tab by <a href="localhost:3000" target="_blank">clicking here</a>.</p>
 
 <a name="future-improvements"></a>
 ## Future Improvements
